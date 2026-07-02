@@ -1,0 +1,36 @@
+name: variables
+ 
+on: push
+ 
+env:                                    # Workflow-level
+  WORKSHOP_NAME: "GH-200 CoHack"
+  Name: "Ponnapalli Mahesh"
+ 
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: "Setup Phase"            # Job-level
+    steps:
+      - name: 🔍 Show All Variable Levels
+        env:
+          STEP_VAR: "I am step-scoped"  # Step-level
+        run: |
+          echo "Workflow : $WORKSHOP_NAME"
+          echo "Job      : $JOB_ENV"
+          echo "Step     : $STEP_VAR"
+          echo "Default  : $GITHUB_ACTOR"
+ 
+      - name: 🔍 Show All Variable Levels
+        run: |
+            echo "Workflow : $WORKSHOP_NAME"
+            echo "Job      : $JOB_ENV"
+            echo "Step     : $STEP_VAR"
+            echo "Default  : $GITHUB_ACTOR"
+
+      - name: 🔐 Use Secret
+        env:
+          MY_SECRET: ${{ secrets.MY_API_KEY }}
+        run: |
+          echo "Secret set: ${{ secrets.MY_API_KEY != '' }}"
+          echo "Try print : $MY_SECRET"
