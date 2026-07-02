@@ -7,3 +7,10 @@ jobs:
     steps:
      - name: Hello World
        run: echo "Hello World!!!"
+       
+     - name: copy code
+       uses: actions/checkout@v6
+
+     - name: List repo Files
+       run: ls -la
+       
