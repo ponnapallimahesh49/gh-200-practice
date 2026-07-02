@@ -23,5 +23,5 @@ jobs:
           echo "ASCII Art Generated"
      - name: Running script
        run: |
-          chmod +x scripts/greets.sh
-          ./scripts/greets.sh  
+          chmod +x scripts/bash1.sh
+          ./scripts/bash1.sh  
