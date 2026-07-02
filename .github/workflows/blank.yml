@@ -13,4 +13,12 @@ jobs:
 
      - name: List repo Files
        run: ls -la
+
+     - name: Create ASCII Art
+       run: |
+          sudo apt-get install -y figlet
+          figlet "GH-200 COHACK"
+          echo "--------------------------"
+          figlet -f digital "GitHub Actions"
+          echo "ASCII Art Generated"
        
