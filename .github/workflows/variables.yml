@@ -28,7 +28,7 @@ jobs:
             echo "Step     : $STEP_VAR"
             echo "Default  : $GITHUB_ACTOR"
 
-      - name: 🔐 Use Secret
+      - name: 🔐 Use Secret check
         env:
           MY_SECRET: ${{ secrets.MY_API_KEY }}
         run: |
